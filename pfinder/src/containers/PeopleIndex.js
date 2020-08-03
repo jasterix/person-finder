@@ -42,12 +42,12 @@ class PeopleIndex extends React.Component {
        <div>
         <h1>Person Finder</h1>
         <br />
-        <Search onSearchChange={_.debounce(this.handleSearch, 500)} />
-        <br />
-
+        <Search onSearchChange={_.debounce(this.handleSearch, 100)} />
+        <div className="peopleCollection">
         <PeopleCollection
           peopleList={this.state.peopleList}
           />
+          </div>
         </div>
   
   )

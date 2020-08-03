@@ -5,37 +5,24 @@ class PersonCard extends React.Component {
 
   render() {
 
+let { person } = this.props
 
     return (
-      <Card >
-        <div  >
-          <div className="image">
-            <img name={this.props.person.name} src={this.props.person.avatar} alt="avatar" />
+      <div className="personCard">
+        
+        
+          <div className="item image">
+            <img name={person.name} src={person.avatar} alt="avatar" />
+</div>
+<div className="details">
+            <h2 className="item name">{person.name}</h2>
+          <p className="item description">{person.description}
+          </p>
+          
           </div>
-
-          <div className="content">
-            <div className="header">{this.props.person.name}</div>
-          </div>
-          <div className="extra content">
-            
-            <div>
-            <span>
-              {/* Weight : {this.props.person.weight} */}
-            </span>
-            </div>
-          </div>
-          </div>
-
-      </Card>
+      </div>
     )
   }
 }
 
 export default PersonCard
-
-  
-  // <tr>
-  //     <td>{this.props.name}</td>
-  //     <td>{this.props.avatar}</td>
-  //     <td>{this.props.description}</td>
-  //   </tr>

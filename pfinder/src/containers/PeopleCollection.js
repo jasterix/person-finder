@@ -14,11 +14,9 @@ class PersonCollection extends React.Component {
     ))
     
     return (
-      <Card.Group itemsPerRow={6}>
-        <h1>Hello From People Collection</h1>
-        <br />
+      <div className="collection">
         {person}
-      </Card.Group>
+      </div>
     )
   }
 }
