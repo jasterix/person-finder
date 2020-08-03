@@ -23,15 +23,19 @@ class PeopleIndex extends React.Component {
 
   //---------------------------------PEOPLE SEARCH------------------------
   handleSearch = (event, data) => {
+      
     this.setState({searchTerm: data.value})
     this.setState({
       peopleList: [...this.state.unfilteredPeopleList]
     })
 
     let allPeople = [...this.state.peopleList]
-
-    let filteredPeople = allPeople.filter(people => people.name.includes(this.state.searchTerm)
-  )
+    let search = this.state.searchTerm
+    // console.log(typeof search)
+    let filteredPeople = allPeople.filter(person=> person.name.toLowerCase().includes(search.toLowerCase()))
+    console.log(filteredPeople);
+    // let filteredPeople = allPeople.filter(people => people.name.toLowerCase().includes(this.state.searchTerm))
+  
   this.setState({peopleList: filteredPeople})
 }
 
