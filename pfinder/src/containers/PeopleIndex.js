@@ -16,7 +16,6 @@ class PeopleIndex extends React.Component {
     fetch("http://localhost:3000/people")
     .then(res => res.json())
     .then(data => {
-        console.log(data)
       this.setState({peopleList: data})
       this.setState({unfilteredPeopleList: data})
     })
@@ -47,7 +46,7 @@ class PeopleIndex extends React.Component {
         <br />
 
         <PeopleCollection
-          personList={this.state.peopleList}
+          peopleList={this.state.peopleList}
           />
         </div>
   
