@@ -31,10 +31,10 @@ class PeopleIndex extends React.Component {
 
     let allPeople = [...this.state.peopleList]
     let search = this.state.searchTerm
-    // console.log(typeof search)
+    
     let filteredPeople = allPeople.filter(person=> person.name.toLowerCase().includes(search.toLowerCase()))
     console.log(filteredPeople);
-    // let filteredPeople = allPeople.filter(people => people.name.toLowerCase().includes(this.state.searchTerm))
+    
   
   this.setState({peopleList: filteredPeople})
 }
@@ -43,15 +43,21 @@ class PeopleIndex extends React.Component {
     
   return(
 
-       <div>
-        <h1>Person Finder</h1>
-        <br />
-        <Search onSearchChange={_.debounce(this.handleSearch, 100)} />
-        <div className="peopleCollection">
-        <PeopleCollection
-          peopleList={this.state.peopleList}
-          />
+       <div className="indexPage">
+       <div className="peopleCollection">
+            <h1>The Person Finder</h1>
+            <h2>If you can't find someone and need to know what they look like, you've come to the right place! Just type the name of the person you are looking for belowinto the search box!</h2>
+            
+            <br />
+            <Search onSearchChange={_.debounce(this.handleSearch, 100)} />
+            <br />
+            <div>
+            <PeopleCollection
+            peopleList={this.state.peopleList}
+            />
           </div>
+
+        </div>
         </div>
   
   )

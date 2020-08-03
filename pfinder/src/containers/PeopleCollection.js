@@ -14,7 +14,11 @@ class PersonCollection extends React.Component {
     ))
     
     return (
-      <div className="collection">
+    //   <div className="collection">
+      <div>
+      <br />
+ 
+           
         {person}
       </div>
     )
